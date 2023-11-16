@@ -1,0 +1,1 @@
+Django project created as per the "Back-End Developer Capstone" course instructions, taught by Meta in Coursera
