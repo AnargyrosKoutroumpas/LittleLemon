@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3rd party apps
     'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
     # My apps
     'restaurant.apps.RestaurantConfig'
 ]
@@ -161,10 +163,10 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
-    # 'DEFAULT_AUTHENTICATION_CLASSES': (
-    #     'rest_framework.authentication.TokenAuthentication',
-    #     'rest_framework.authentication.SessionAuthentication',
-    # ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
     # 'DEFAULT_THROTTLE_RATES': {
     #     'anon': '5/second',
     #     'user': '5/second',
@@ -175,4 +177,8 @@ REST_FRAMEWORK = {
     # ),
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     # 'PAGE_SIZE': 2
+}
+
+DJOSER = {
+    "USER_ID_FIELD": "username"
 }
